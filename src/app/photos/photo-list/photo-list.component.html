@@ -1,0 +1,18 @@
+<div class="tex-center mt-3 mb-3"> <!--margem top 3 e margem botton 3-->
+    <form>
+        <input 
+            class="rounded" 
+            type="search"  
+            placeholder="search..."
+            autofocus
+            (keyup)="filter = $event.target.value"> <!-- para o evento keyup avalie a expressão*//-->
+    </form>
+</div>
+{{ filter }} <!-- databind do componente para a View -->
+<ap-photos [photos]="photos | filterByDescription: filter"></ap-photos>
+
+
+<!--
+    [] - databinder - pega o dado da fonte de dados do component para o template
+    () - eventbinder - pega o dado do evento para o componente
+-->
